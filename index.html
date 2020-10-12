@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reken Quiz</title>
+    <meta name="vieuwport" content="width=device-width, intitial-scale=1.0">
+    <link rel="stylesheet" href="Style/style.css">
+<!--    <script type="text/javascript" src="Controller/som.js"> </script>-->
+
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="main">
+
+            <h1>Reken-Quiz <span> Quiz Spel :)</span> </h1>
+
+            <!-- main box -->
+            <div class="main-box">
+                <div class="show-answer"> <span id="ans"></span></div>
+
+                <div class="box1">
+                    <div class="box-col">
+                        <input type="textf" id="intext" class="intext11">
+                    </div>
+
+                    <div class="add-s">
+                        <p>+</p>
+                    </div>
+
+                    <div class="box-col">
+                        <input type="textf" id="intext1" class="intext11">
+                    </div>
+
+                </div>
+
+                <!-- text invullen -->
+                <div class="box2">
+                    <input type="text" id="intext2">
+                </div>
+                <!-- button -->
+                <div class="box2">
+                   <button class="btn" onclick="Game()">Controleer Antwoord</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>let n1 = Math.floor(Math.random()*20+1);
+let n2 = Math.floor(Math.random()*20+1);
+
+document.getElementById("intext").value = n1;
+document.getElementById("intext1").value = n2;
+
+let adds= n1 + n2;
+
+function Game(){
+    var user= document.getElementById("intext2").value;
+
+    if( user == adds){
+        document.getElementById("ans").innerHTML = "GoedZo! Uw antwoord was goed!";
+    }else{
+        document.getElementById("ans").innerHTML = "Jammer De goede antwoord was: " + adds + " . Probeer het opnieuw!";
+    }
+
+    var user= document.getElementById("intext2").value = "";
+
+
+    n1 = Math.floor(Math.random()*20+1);
+    n2 = Math.floor(Math.random()*20+1);
+
+    document.getElementById("intext").value = n1;
+    document.getElementById("intext1").value = n2;
+
+    adds= n1 + n2;
+}</script>
+
+
+</body>
+</html>
